@@ -11,6 +11,7 @@ pipeline {
         }
     }
 }
+// some commetw 
     //     stage('deploy-dev') {
     //         steps {
     //             deploy("DEV")
