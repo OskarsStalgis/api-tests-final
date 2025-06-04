@@ -10,6 +10,7 @@ pipeline {
             }
         }
     }
+}
     //     stage('deploy-dev') {
     //         steps {
     //             deploy("DEV")
