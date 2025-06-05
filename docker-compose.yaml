@@ -1,0 +1,41 @@
+# Define a docker-compose for our python microservice containing: [3 points]
+# 3 services:
+# greetings-app-dev, port mapping: 7001:3000
+# greetings-app-stg, port mapping: 7002:3000
+# greetings-app-prod, port mapping: 7003:3000
+
+services:
+  api-tests-dev:
+    build: .
+    image: oskarsstalgis/api-tests:latest
+    container_name: api-tests-dev
+    volumes:
+      -$PWD/test-reports/dev:/api-tests/mochawsome-report
+    command: run GREETINGS GREETINGS_DEV
+    networks:
+      - api-tests-network-compose
+    ports:
+     - 7001:3000
+  api-tests-stg:
+    build: .
+    image: oskarsstalgis/api-tests:latest
+    container_name: api-tests-stg
+    volumes:
+      -$PWD/test-reports/stg:/api-tests/mochawsome-report
+    command: run GREETINGS GREETINGS_DEV
+    ports:
+     - 7002:3000
+  api-tests-prod:
+    build: .
+    image: oskarsstalgis/api-tests:latest
+    container_name: api-tests-prod
+    volumes:
+      -$PWD/test-reports/prodv:/api-tests/mochawsome-report
+    command: run GREETINGS GREETINGS_DEV
+    ports:
+     - 7003:3000
+
+networks:
+  greetings-app-network-compose:
+    external: true
+
