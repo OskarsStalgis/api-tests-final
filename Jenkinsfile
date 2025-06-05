@@ -6,16 +6,16 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                buildApp()
+                buildImapge()
             }
         }
     }
 }
 
-def buildApp(){
-    echo "Building of node application is starting.."
+def buildImage(){
+    echo "Building of Docker Image is starting.."
     sh "docker build -t oskarsstalgis/api-tests:latest ."
 
-    echo "Pushing img to Docker registry.."
+    echo "Pushing image to Docker registry.."
     sh "docker push oskarsstalgis/api-tests:latest"
 }
