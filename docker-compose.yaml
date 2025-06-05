@@ -10,8 +10,8 @@ services:
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-dev
     volumes:
-      -$PWD/test-reports/dev:/api-tests/mochawsome-report
-    command: run GREETINGS GREETINGS_DEV
+      -$PWD/test-reports/dev:/api-tests-final/mochawsome-report
+    command: run greetings greetings-dev
     networks:
       - api-tests-network-compose
     ports:
@@ -21,8 +21,8 @@ services:
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-stg
     volumes:
-      -$PWD/test-reports/stg:/api-tests/mochawsome-report
-    command: run GREETINGS GREETINGS_DEV
+      -$PWD/test-reports/stg:/api-tests-final/mochawsome-report
+    command: run greetings greetings-stg
     ports:
      - 7002:3000
   api-tests-prod:
@@ -30,8 +30,8 @@ services:
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-prod
     volumes:
-      -$PWD/test-reports/prodv:/api-tests/mochawsome-report
-    command: run GREETINGS GREETINGS_DEV
+      -$PWD/test-reports/prd:/api-tests-final/mochawsome-report
+    command: run greetings greetings-prod
     ports:
      - 7003:3000
 
