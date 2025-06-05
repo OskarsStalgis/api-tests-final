@@ -3,31 +3,31 @@ services:
     build: .
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-dev
-    volumes:
-      -$PWD/test-reports/dev:/api-tests-final/mochawsome-report
-    command: run greetings greetings-dev
-    networks:
-      - greetings-app-network-compose
+    # volumes:
+    #   -$PWD/test-reports/dev:/api-tests-final/mochawsome-report
+    # command: run greetings greetings-dev
+    # networks:
+    #   - greetings-app-network-compose
   
   api-tests-stg:
     build: .
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-stg
-    volumes:
-      -$PWD/test-reports/stg:/api-tests-final/mochawsome-report
-    command: run greetings greetings-stg
-    networks:
-      - greetings-app-network-compose
+    # volumes:
+    #   -$PWD/test-reports/stg:/api-tests-final/mochawsome-report
+    # command: run greetings greetings-stg
+    # networks:
+    #   - greetings-app-network-compose
   
   api-tests-prod:
     build: .
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-prod
-    volumes:
-      -$PWD/test-reports/prd:/api-tests-final/mochawsome-report
-    command: run greetings greetings-prod
-    networks:
-      - greetings-app-network-compose
+    # volumes:
+    #   -$PWD/test-reports/prd:/api-tests-final/mochawsome-report
+    # command: run greetings greetings-prod
+    # networks:
+    #   - greetings-app-network-compose
   
 
 networks:
