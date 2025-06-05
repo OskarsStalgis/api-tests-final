@@ -6,7 +6,6 @@ services:
     volumes:
       -$PWD/test-reports/dev:/api-tests-final/mochawsome-report
     command: npm run greetings
-
     networks:
       - greetings-app-network-compose
   
