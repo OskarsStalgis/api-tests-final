@@ -5,7 +5,7 @@ services:
     container_name: api-tests-dev
     volumes:
       -$PWD/test-reports/dev:/api-tests-final/mochawsome-report
-    command: run greetings
+    command: run greetings-dev
     networks:
       - greetings-app-network-compose
   
