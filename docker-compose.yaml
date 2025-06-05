@@ -8,7 +8,6 @@ services:
     command: run greetings greetings_dev
     networks:
       - greetings-app-network-compose
-  
   api-tests-stg:
     build: .
     image: oskarsstalgis/api-tests:latest
@@ -18,7 +17,6 @@ services:
     command: run greetings greetings_stg
     networks:
       - greetings-app-network-compose
-  
   api-tests-prod:
     build: .
     image: oskarsstalgis/api-tests:latest
@@ -28,7 +26,6 @@ services:
     command: run greetings greetings_prod
     networks:
       - greetings-app-network-compose
-  
 
 networks:
   greetings-app-network-compose:
