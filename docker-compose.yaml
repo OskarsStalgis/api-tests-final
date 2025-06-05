@@ -4,7 +4,7 @@ services:
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-dev
     volumes:
-      -$PWD/test-reports/dev:/api-tests-final/mochawsome-report
+      -$PWD/test-reports/dev:/api-test-automation/mochawesome-report/
     command: run greetings greetings_dev
     networks:
       - greetings-app-network-compose
@@ -14,7 +14,7 @@ services:
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-stg
     volumes:
-      -$PWD/test-reports/stg:/api-tests-final/mochawsome-report
+      -$PWD/test-reports/stg:/api-test-automation/mochawesome-report/
     command: run greetings greetings_stg
     networks:
       - greetings-app-network-compose
@@ -24,7 +24,7 @@ services:
     image: oskarsstalgis/api-tests:latest
     container_name: api-tests-prod
     volumes:
-      -$PWD/test-reports/prd:/api-tests-final/mochawsome-report
+      -$PWD/test-reports/prd:/api-test-automation/mochawesome-report/
     command: run greetings greetings_prod
     networks:
       - greetings-app-network-compose
